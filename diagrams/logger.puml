@@ -1,0 +1,31 @@
+@startuml
+class Logger {
+  - directory: Path
+  - sinks: ConcurrentMap<String, Actor.Ref>
+  - mainLog: Actor.Ref
+  - fmt: Formatter
+  - timestampGenerator: TimestampGenerator
+  + {static} open(Path, Formatter, TimestampGenerator)
+  + logDevice(Device, String, attrs: Object...)
+  + log(String, attrs: Object...)
+  + getTimestampGenerator(): TimestampGenerator
+  + getPath(): Path
+}
+
+interface Closeable {
+  + close()
+}
+
+Logger <|-- Closeable
+
+interface Formatter {
+  + format(Calendar, msg: String, attrs: Object[]): 
+}
+
+class LineFormatter  {
+  + format(Calendar, msg: String, attrs: Object[]): 
+}
+
+LineFormatter <|-- Formatter
+
+@enduml

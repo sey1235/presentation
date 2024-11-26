@@ -1,0 +1,25 @@
+@startuml
+abstract class Device {
+  - name: String
+  - abstract innerTick(Calendar)
+  + getName(): String
+  + tick(Calendar, Logger): int
+}
+
+class SolarPanel {
+  + innerTick(Logger)
+}
+
+class Store {
+  + innerTick(Logger)
+  + getCurrentCapacity(): int
+  + tryCharge(int): int
+}
+
+Device <|-- SolarPanel
+
+Device <|-- StableDevice
+
+Device <|-- Store
+
+@enduml
