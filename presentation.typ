@@ -10,7 +10,7 @@
 #set par(justify: true)
 
 #title-slide(
-  author: [Seyon TODO, Jürgen Theodor Wawro],
+  author: [Seyon Srikantha, Jürgen Theodor Wawro],
   title: "Java Capstone Project",
   date: "2024-11-28",
 )
